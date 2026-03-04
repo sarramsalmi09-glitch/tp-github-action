@@ -20,12 +20,12 @@ jobs:
       
       - name: Build Backend Image
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/backend-tp:latest ./springboot/app
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/backend-tp:latest ./backend
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/backend-tp:latest
       
       - name: Build Frontend Image
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/frontend-tp:latest ./angular-app
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/frontend-tp:latest ./frontend
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/frontend-tp:latest
       
       - name: Test with Docker Compose

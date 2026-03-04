@@ -1,17 +1,17 @@
-version: '3'
+version: '3.8'
 
 services:
   backend:
-    build: ./backend
+    build: ./springboot/app
     ports:
-      - "5000:5000"
+      - "8080:8080"
     networks:
       - app-network
 
   frontend:
-    build: ./frontend
+    build: ./angular-app
     ports:
-      - "3000:3000"
+      - "4200:4200"
     depends_on:
       - backend
     networks:
